@@ -1,0 +1,22 @@
+
+!!! 5
+html
+  head
+    title=title
+    link(rel='stylesheet', href='css/site.css')
+  body(class=[(session.authenticated ? 'authenticated' : 'unauthenticated')])
+    div.navbar
+      div.navbar-inner
+        div.container
+          a.brand(href='/') Node Express App
+          ul.nav
+            li
+              a(href='/login') Login
+            li
+              a(href='/register') Register
+            li
+              a(href='/home') Home
+            li
+              a(href='/logout') Logout
+    div#main
+      body!=body
