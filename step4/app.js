@@ -5,8 +5,8 @@
 var express = require('express')
   , SessionStore = require('connect-redis')(express)
   , routes = require('./routes')
-  , Nohm = require('nohm').Nohm
   , lessMiddleware = require('less-middleware')
+  , Nohm = require('nohm').Nohm
   , redis = require('redis')
   , passport = require('./lib/auth')
   ;
@@ -21,7 +21,7 @@ redisClient.on("connect", function () {
   console.log("Connected to redis");
   Nohm.setClient(redisClient);
 }).on("error", function (err) {
-  console.log("RedisClient Error " + err);
+    console.log("RedisClient Error " + err);
 });
 
 // Configuration
