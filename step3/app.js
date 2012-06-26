@@ -19,6 +19,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   app.use(express.session({
+    secret : 'string',
     store : new SessionStore()
   }));
   app.use(lessMiddleware({src: __dirname + '/public'}));

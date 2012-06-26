@@ -31,12 +31,13 @@ app.configure(function () {
   app.set('view options', { layout : true });
 
   app.use(express.bodyParser());
-  app.use(express.cookieParser('secret'));
-  app.use(express.session({ secret : 'secret', store : new SessionStore() }));
   app.use(express.methodOverride());
 
   app.use(lessMiddleware({src: __dirname + '/public', force : true}));
   app.use(express.static(__dirname + '/public'));
+
+  app.use(express.cookieParser());
+  app.use(express.session({ secret : 'secret', store : new SessionStore() }));
 
   app.use(passport.initialize());
   app.use(passport.session());

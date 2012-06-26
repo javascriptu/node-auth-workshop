@@ -4,11 +4,11 @@ html
   head
     title=title
     link(rel='stylesheet', href='css/site.css')
-  body(class=[(session.authenticated ? 'authenticated' : 'unauthenticated')])
+  body
     div.navbar
       div.navbar-inner
         div.container
-          a.brand(href='/') Node Express App
+          a.brand(href='/') Your node app!
           ul.nav
             li
               a(href='/login') Login
@@ -18,5 +18,4 @@ html
               a(href='/home') Home
             li
               a(href='/logout') Logout
-    div#main
-      body!=body
+    div#main!=body
